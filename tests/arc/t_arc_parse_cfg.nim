@@ -12,7 +12,18 @@ name2
 987654321
 liame
 '''
+description: '''
+  . From https://github.com/nim-lang/Nim/issues/17025
+    [regression] parsecfg is broken with --gc:orc/arc
+  . The returned dictionary seems to be complete.
+    But the issue can't be purely related to the dictionary lookup because
+    it works fine in the second test case.
+  . This is regression. AFAIK caused by
+    https://github.com/nim-lang/Nim/commit/216be4060a853b3425501318537d598c4842eefc
+  '''
 """
+# This seems like a great test to refactor, using blocks and checking for strings instead of out.
+# tags: [ test_regression, fail_runtime, stdlib ]
 
 import parsecfg, streams, tables
 
@@ -54,3 +65,4 @@ proc main2() =
     echo pname & "\n" & name & "\n" & qq & "\n" & email
 
 main2()
+

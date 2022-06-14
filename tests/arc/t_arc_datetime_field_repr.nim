@@ -1,11 +1,16 @@
 discard """
   targets: "c js"
   matrix: "--gc:refc; --gc:arc"
+  description: '''
+    . From https://github.com/nim-lang/Nim/issues/17812
+      repr fails to compile with ARC/ORC on DateTime object field
+  '''
 """
-
+ # Why all these blocks? This test seems slow, btw
+ # tags: [ fail_compilation, repr, gc_arc , datetime, stdlib ]
 import std/times
 
-block: # bug #17812
+block:
   block:
     type
       Task = object
@@ -27,3 +32,4 @@ block: # bug #17812
     proc `$`(o: MyObj): string = o.repr
 
     doAssert ($MyObj()).len > 0
+
