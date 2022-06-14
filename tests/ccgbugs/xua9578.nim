@@ -5,3 +5,4 @@ proc testUncheckedArray*(x: var UncheckedArray[mytype]) =
 
 proc testUncheckedArray2*(x: var ptr UncheckedArray[mytype]) =
   f(x[0].addr)
+

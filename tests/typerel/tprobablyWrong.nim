@@ -1,0 +1,11 @@
+discard """
+description: " i don't think this is actually 8905; #8905"
+"""
+type
+  Foo[T] = distinct seq[T]
+  Bar[T] = object
+
+proc newFoo[T](): Foo[T] = Foo[T](newSeq[T]())
+
+var x = newFoo[Bar[int]]()
+

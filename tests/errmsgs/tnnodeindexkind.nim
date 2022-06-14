@@ -6,3 +6,5 @@ import macros
 macro t(x: untyped): untyped =
   x[0] = newEmptyNode()
 t("abc")
+
+

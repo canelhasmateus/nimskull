@@ -5,3 +5,4 @@ proc testSeq*(x: var seq[mytype]) =
 
 proc testSeq2*(x: var ptr seq[mytype]) =
   f(x[0].addr)
+

@@ -45,6 +45,7 @@ block assert_type_of_the_expression:
   var value: int = 0
 
   doAssert value is int
+  #doAssert value isnot seq
   doAssert value == 0
 
 block get_type_of_the_expression_explicitly:

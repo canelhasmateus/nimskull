@@ -4,9 +4,9 @@ nimoutformat: "sexp"
 cmd: "nim c --filenames=canonical --msgFormat=sexp $file"
 action: compile
 nimout: '''
-(IntEchoMessage :msg "test message")
+(IntEchoMessage :msg "test message\t")
 '''
 """
 
 static:
-  echo "test message"
+  echo "test message\\t"

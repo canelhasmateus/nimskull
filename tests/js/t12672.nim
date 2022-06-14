@@ -1,5 +1,6 @@
 discard """
   output: ""
+  description: ""
 """
 
 proc foo =
@@ -10,3 +11,4 @@ proc foo =
     inc row[i-1]
 
 foo()
+
